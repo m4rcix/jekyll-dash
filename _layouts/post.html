@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% unless site.dash.show_author == false %}
+{% unless site.dash.show_author_posts == false %}
   {% include author.html %}
 {% endunless %}
 <div class="post">
@@ -29,6 +29,7 @@ layout: default
 </div>
 {% endif %}
 
+{% unless site.dash.show_related == false %}
 {% assign size = site.related_posts | size %}
 {% if size != 0 %}
 <div class="related">
@@ -46,6 +47,7 @@ layout: default
   </ul>
 </div>
 {% endif %}
+{% endunless %}
 {% include tagcloud.html %}
 
 {% assign animation_speed = site.dash.animation_speed | default: 50 %}
